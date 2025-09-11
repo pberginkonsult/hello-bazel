@@ -29,3 +29,13 @@ bazel build -s //... --extra_toolchains=//toolchain:cc_toolchain_for_linux_x86_6
 ```
 bazel build -s //... --extra_toolchains=//toolchain:cc_toolchain_for_linux_x86_64_clang
 ```
+
+### Build with Yocto SDK for cortexa57
+
+The Yocto SDK will be downloaded from upstream, installed and used in the build.
+bazel-toolchains-yocto is still for old bazel and WORKSPACE is used as an intermediate
+step.
+
+```
+bazel build --config cortexa57 -s //...
+```

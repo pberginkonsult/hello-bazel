@@ -11,9 +11,8 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 git_repository(
     name = "bazel_toolchains_yocto",
     remote = "https://github.com/pberginkonsult/bazel-toolchains-yocto.git",
-    commit = "6137d475fa3a16a4b795c7852c55c90a6bb4f69d",
+    commit = "a356a41cc6780b3be9b8b8ba0fe09ee1f091dfef",
 )
-
 
 load("@bazel_toolchains_yocto//yocto:repositories.bzl", "bazel_toolchains_yocto_dependencies")
 

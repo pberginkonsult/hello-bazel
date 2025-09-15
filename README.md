@@ -39,3 +39,11 @@ step.
 ```
 bazel build --config cortexa57 -s //...
 ```
+
+### Build wiht a local SDK
+
+Make sure you source the environment script from the SDK.
+
+```
+bazel build --config local-sdk -s //...
+```

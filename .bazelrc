@@ -5,3 +5,19 @@ build:cortexa57 --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
 build:cortexa57 --platforms=@cortexa57-poky-linux_new//bazel:platform-target
 build:cortexa57 --extra_toolchains=@cortexa57-poky-linux_new//bazel/toolchain:cc-toolchain-target
 
+build:armv8a --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build:armv8a --platforms=@armv8a-poky-linux_new//bazel:platform-target
+build:armv8a --extra_toolchains=@armv8a-poky-linux_new//bazel/toolchain:cc-toolchain-target
+
+build:armv8a-clang --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build:armv8a-clang --platforms=@armv8a-poky-linux_new//bazel:platform-target
+build:armv8a-clang --extra_toolchains=@armv8a-poky-linux_new//bazel/toolchain:cc-toolchain-target-clang
+
+# Use local SDK
+build:local-sdk --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build:local-sdk --platforms=@yocto_aarch64//bazel:platform-target
+build:local-sdk --extra_toolchains=@yocto_aarch64//bazel/toolchain:cc-toolchain-target
+
+build:local-sdk-clang --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build:local-sdk-clang --platforms=@yocto_aarch64//bazel:platform-target
+build:local-sdk-clang --extra_toolchains=@yocto_aarch64//bazel/toolchain:cc-toolchain-target-clang

@@ -7,3 +7,19 @@ register_toolchains(
     "//toolchain:cc_toolchain_for_linux_x86_64_clang",
     "//toolchain:cc_toolchain_for_linux_x86_64_gcc",
 )
+
+new_git_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
+
+new_git_repository(
+    name = "bazel_toolchains_yocto",
+    commit = "a356a41cc6780b3be9b8b8ba0fe09ee1f091dfef",
+    remote = "https://github.com/pberginkonsult/bazel-toolchains-yocto.git",
+)
+
+bazel_dep(name = "bazel_skylib", version = "1.8.1")
+
+yocto_ext = use_extension("//tools:yocto_ext.bzl", "yocto_ext")
+yocto_ext.local_sdk(
+    name = "yocto_aarch64",
+)
+use_repo(yocto_ext, "yocto_aarch64")
